@@ -170,3 +170,28 @@ class EkChai {
     constructor(public flavour: string){}
 }
 console.log(EkChai.shopName);
+
+class Heater {
+
+    heat() {
+        console.log("Heating water...")
+    }
+
+}
+
+class ChaiMaker {
+
+    constructor(private heater: Heater) {}
+
+    make() {
+        this.heater.heat()
+    }
+
+}
+
+
+const heater = new Heater()
+
+const chaiMaker = new ChaiMaker(heater)
+
+chaiMaker.make()
